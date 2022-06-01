@@ -5,4 +5,3 @@ def uppercase(str):
         if _ord >= 97 and _ord <= 122:
             str = str[:i] + chr(_ord - 32) + str[(i + 1):]
     print("{}".format(str))
-    
