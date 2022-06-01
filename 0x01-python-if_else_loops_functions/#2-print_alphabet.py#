@@ -1,0 +1,4 @@
+#!/usr/bin/python3
+i = 97
+while i < (97 + 26):
+    print(chr(i))
