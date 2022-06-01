@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 i = 97
-str = ''
-while i < (97 + 26):
-    str += f"{chr(i)}"
+while i < 123:
+    print("{}".format(chr(i)), end='')
     i += 1
-print(str, end='')
