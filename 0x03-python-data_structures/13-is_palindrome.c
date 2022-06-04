@@ -1,6 +1,4 @@
 #include "lists.h"
-#include <stdio.h>
-
 /**
  * is_palindrome - Check if a singly linked list is a palindrome.
  * @head: Adress to the list to check
@@ -30,7 +28,7 @@ int is_palindrome(listint_t **head)
 			while ((last_node->next != prev) && last_node->next)
 				last_node = last_node->next;
 
-			/* stop if the last element is the same as the current element */
+			/* check if the last element did not change */
 			if (last_node == curr)
 				break;
 		}
