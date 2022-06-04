@@ -2,34 +2,6 @@
 #include <stdio.h>
 
 /**
- * reverse_list - Reverse a simply linked list
- * @head: Adress of the list to reverse
- *
- * Return: the pointer to the reversed list
- */
-listint_t *reverse_list(listint_t **head)
-{
-	listint_t *prev, *next;
-
-	if (!head || !(*head))
-		return (NULL);
-
-	if (!(*head)->next)
-		return (*head);
-
-	prev = NULL;
-	while (*head)
-	{
-		next = (*head)->next;
-		(*head)->next = prev;
-		prev = *head;
-		*head = next;
-	}
-	*head = prev;
-	return (*head);
-}
-
-/**
  * is_palindrome - Check if a singly linked list is a palindrome.
  * @head: Adress to the list to check
  *
