@@ -32,6 +32,7 @@ int is_palindrome(listint_t **head)
 			if (last_node == curr)
 				break;
 		}
+
 		if (last_node->n == curr->n)
 		{
 			/* check if the next element is not the last checked element */
