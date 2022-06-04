@@ -105,7 +105,7 @@ guillaume@ubuntu:~/0x03$
 -   Directory: `0x03-python-data_structures`
 -   File: `0-print_list_integer.py`
 
- Done? Help Check your code Get a sandbox
+<br>
 
 ### 1\. Secure access to an element in a list
 
@@ -140,7 +140,7 @@ guillaume@ubuntu:~/0x03$
 -   Directory: `0x03-python-data_structures`
 -   File: `1-element_at.py`
 
- Done? Help Check your code Get a sandbox
+<br>
 
 ### 2\. Replace element
 
@@ -180,7 +180,7 @@ guillaume@ubuntu:~/0x03$
 -   Directory: `0x03-python-data_structures`
 -   File: `2-replace_in_list.py`
 
- Done? Help Check your code Get a sandbox
+<br>
 
 ### 3\. Print a list of integers... in reverse!
 
@@ -219,7 +219,7 @@ guillaume@ubuntu:~/0x03$
 -   Directory: `0x03-python-data_structures`
 -   File: `3-print_reversed_list_integer.py`
 
- Done? Help Check your code Get a sandbox
+<br>
 
 ### 4\. Replace in a copy
 
@@ -259,7 +259,7 @@ guillaume@ubuntu:~/0x03$
 -   Directory: `0x03-python-data_structures`
 -   File: `4-new_in_list.py`
 
- Done? Help Check your code Get a sandbox
+<br>
 
 ### 5\. Can you C me now?
 
@@ -295,7 +295,7 @@ guillaume@ubuntu:~/0x03$
 -   Directory: `0x03-python-data_structures`
 -   File: `5-no_c.py`
 
- Done? Help Check your code Get a sandbox
+<br>
 
 ### 6\. Lists of lists = Matrix
 
@@ -341,7 +341,7 @@ guillaume@ubuntu:~/0x03$
 -   Directory: `0x03-python-data_structures`
 -   File: `6-print_matrix_integer.py`
 
- Done? Help Check your code Get a sandbox
+<br>
 
 ### 7\. Tuples addition
 
@@ -385,7 +385,7 @@ guillaume@ubuntu:~/0x03$
 -   Directory: `0x03-python-data_structures`
 -   File: `7-add_tuple.py`
 
- Done? Help Check your code Get a sandbox
+<br>
 
 ### 8\. More returns!
 
@@ -418,7 +418,7 @@ guillaume@ubuntu:~/0x03$
 -   Directory: `0x03-python-data_structures`
 -   File: `8-multiple_returns.py`
 
- Done? Help Check your code Get a sandbox
+<br>
 
 ### 9\. Find the max
 
@@ -453,7 +453,7 @@ guillaume@ubuntu:~/0x03$
 -   Directory: `0x03-python-data_structures`
 -   File: `9-max_integer.py`
 
- Done? Help Check your code Get a sandbox
+<br>
 
 ### 10\. Only by 2
 
@@ -497,7 +497,7 @@ guillaume@ubuntu:~/0x03$
 -   Directory: `0x03-python-data_structures`
 -   File: `10-divisible_by_2.py`
 
- Done? Help Check your code Get a sandbox
+<br>
 
 ### 11\. Delete at
 
@@ -534,7 +534,7 @@ guillaume@ubuntu:~/0x03$
 -   Directory: `0x03-python-data_structures`
 -   File: `11-delete_at.py`
 
- Done? Help Check your code Get a sandbox
+<br>
 
 ### 12\. Switch
 
@@ -561,7 +561,7 @@ guillaume@ubuntu:~/py/0x03$
 -   Directory: `0x03-python-data_structures`
 -   File: `12-switch.py`
 
- Done? Help Check your code Get a sandbox
+<br>
 
 ### 13\. Linked list palindrome
 
