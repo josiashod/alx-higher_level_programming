@@ -24,6 +24,7 @@ class Square():
         else:
             self.__size = size
 
+    @classmethod
     def area(self):
         """Give the current square area"""
         return (self.__size**2)
