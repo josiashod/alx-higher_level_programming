@@ -5,19 +5,20 @@
 
 
 class Node:
-    """Node of a singly linked list by
-
-       Args:
-           data (int): the data of the node
-           next_node (Node): the next node
-    """
+    """Represent a node in a singly-linked list."""
 
     def __init__(self, data, next_node=None):
-        self.__data = data
-        self.__next_node = next_node
+        """Initialize a new Node.
+        Args:
+            data (int): The data of the new Node.
+            next_node (Node): The next node of the new Node.
+        """
+        self.data = data
+        self.next_node = next_node
 
     @property
     def data(self):
+        """Get/set the data of the Node."""
         return (self.__data)
 
     @data.setter
@@ -28,6 +29,7 @@ class Node:
 
     @property
     def next_node(self):
+        """Get/set the next_node of the Node."""
         return (self.__next_node)
 
     @next_node.setter
@@ -38,11 +40,7 @@ class Node:
 
 
 class SinglyLinkedList:
-    """Singly linked class
-
-       Args:
-           head (node): the head of the node
-    """
+    """Represent a singly-linked list."""
 
     def __init__(self):
         """Initalize a new SinglyLinkedList."""
@@ -50,10 +48,8 @@ class SinglyLinkedList:
 
     def sorted_insert(self, value):
         """Insert a new Node to the SinglyLinkedList.
-
         The node is inserted into the list at the correct
         ordered numerical position.
-
         Args:
             value (Node): The new Node to insert.
         """
@@ -61,13 +57,13 @@ class SinglyLinkedList:
         if self.__head is None:
             new.next_node = None
             self.__head = new
-        elif self.__head.data > new.data:
+        elif self.__head.data > value:
             new.next_node = self.__head
             self.__head = new
         else:
             tmp = self.__head
             while (tmp.next_node is not None and
-                    tmp.next_node.data < new.data):
+                    tmp.next_node.data < value):
                 tmp = tmp.next_node
             new.next_node = tmp.next_node
             tmp.next_node = new
