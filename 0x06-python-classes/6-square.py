@@ -53,7 +53,8 @@ class Square():
         """Prints in stdout the square with the character #"""
 
         _print = ""
-        _print += "\n" * self.__position[1]
+        if self.__size:
+            _print += "\n" * self.__position[1]
         for i in range(self.__size):
             _print += " " * self.__position[0]
             _print += "#" * self.__size
