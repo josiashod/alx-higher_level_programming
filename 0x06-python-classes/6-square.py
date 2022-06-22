@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-"""Defines class Square
-"""
-
-
-from turtle import position
+"""Defines class Square"""
 
 
 class Square():
