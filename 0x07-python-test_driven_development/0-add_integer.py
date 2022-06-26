@@ -1,0 +1,21 @@
+#!/usr/bin/python3
+"""This is the integer addtion module.
+>>> add_integer("b")
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer"""
+
+
+def add_integer(a, b=98):
+    """Return the addtion of two integer
+    >>> add_integer(45, 5)
+    50"""
+    try:
+        a = int(a)
+    except (TypeError, ValueError):
+        raise TypeError("a must be an integer")
+    try:
+        b = int(b)
+    except (TypeError, ValueError):
+        raise TypeError("b must be an integer")
+    return (a + b)
