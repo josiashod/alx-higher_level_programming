@@ -56,8 +56,9 @@ class Rectangle():
         with the character #"""
 
         _print = ""
-        for i in range(self.__height):
-            _print += "#" * self.__width
-            if i != (self.__height - 1):
-                _print += "\n"
+        if self.__height > 0 and self.__width > 0:
+            for i in range(self.__height):
+                _print += "#" * self.__width
+                if i != (self.__height - 1):
+                    _print += "\n"
         return (_print)
