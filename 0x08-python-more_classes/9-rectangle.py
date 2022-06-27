@@ -79,11 +79,6 @@ class Rectangle():
             size (int): the size of the square to create
         """
 
-        if type(size) != int:
-            raise TypeError("height must be an integer")
-        elif size < 0:
-            raise ValueError("height must be >= 0")
-
         return (cls(size, size))
 
     def __str__(self) -> str:
