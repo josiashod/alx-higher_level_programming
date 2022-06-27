@@ -84,7 +84,7 @@ class Rectangle():
         elif size < 0:
             raise ValueError("height must be >= 0")
 
-        return (Rectangle(size, size))
+        return (cls(size, size))
 
     def __str__(self) -> str:
         """Print the rectangle with the character #"""
