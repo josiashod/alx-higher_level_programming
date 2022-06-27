@@ -42,7 +42,7 @@ class Rectangle():
     def area(self):
         """Return the area of the rectangle"""
 
-        return (self.width * self.height)
+        return (self.__width * self.__height)
 
     def perimeter(self):
         """Return the perimeter of the rectangle"""
@@ -65,7 +65,7 @@ class Rectangle():
         """Return a string representation of the rectangle to
         be able to recreate a new instance by using eval()"""
 
-        return (f"Rectangle({self.width}, {self.height})")
+        return (f"Rectangle({self.__width}, {self.__height})")
 
     def __del__(self) -> None:
         """Print a message when an instance of Rectangle is deleted"""

@@ -85,7 +85,7 @@ class Rectangle():
         """Return a string representation of the rectangle to
         be able to recreate a new instance by using eval()"""
 
-        return (f"Rectangle({self.width}, {self.height})")
+        return (f"Rectangle({self.__width}, {self.__height})")
 
     def __del__(self) -> None:
         """Print a message when an instance of Rectangle is deleted"""
