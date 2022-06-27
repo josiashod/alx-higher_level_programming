@@ -52,13 +52,15 @@ class Rectangle():
         return ((self.__width + self.__height) * 2)
 
     def __str__(self) -> str:
-        """Print the rectangle with the character #"""
+        """Return a string that print the rectangle
+        with the character #"""
 
         _print = ""
-        for i in range(self.__height):
-            _print += "#" * self.__width
-            if i != (self.__height - 1):
-                _print += "\n"
+        if self.__height > 0 and self.__width > 0:
+            for i in range(self.__height):
+                _print += "#" * self.__width
+                if i != (self.__height - 1):
+                    _print += "\n"
         return (_print)
 
     def __repr__(self) -> str:
