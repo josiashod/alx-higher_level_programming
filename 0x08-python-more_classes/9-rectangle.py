@@ -53,7 +53,9 @@ class Rectangle():
     def perimeter(self):
         """Return the perimeter of the rectangle"""
 
-        return ((self.width + self.height) * 2)
+        if (self.__width == 0) or (self.__height == 0):
+            return (0)
+        return ((self.__width + self.__height) * 2)
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
