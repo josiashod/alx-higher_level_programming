@@ -50,7 +50,8 @@ class Rectangle():
         return ((self.width + self.height) * 2)
 
     def __str__(self) -> str:
-        """Print the rectangle with the character #"""
+        """Return a string that print the rectangle
+        with the character #"""
 
         _print = ""
         for i in range(self.__height):
