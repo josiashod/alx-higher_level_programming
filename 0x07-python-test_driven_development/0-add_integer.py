@@ -10,12 +10,9 @@ def add_integer(a, b=98):
     """Return the addtion of two integer
     >>> add_integer(45, 5)
     50"""
-    try:
-        a = int(a)
-    except (TypeError, ValueError):
+
+    if type(a) not in [int, float]:
         raise TypeError("a must be an integer")
-    try:
-        b = int(b)
-    except (TypeError, ValueError):
+    if type(b) not in [int, float]:
         raise TypeError("b must be an integer")
-    return (a + b)
+    return (int(a) + int(b))
