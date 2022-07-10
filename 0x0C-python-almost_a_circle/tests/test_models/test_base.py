@@ -2,6 +2,8 @@
 """ Module for test Base class """
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
 
 
 class TestBaseMethods(unittest.TestCase):
@@ -54,3 +56,23 @@ class TestBaseMethods(unittest.TestCase):
         new = Base()
         with self.assertRaises(AttributeError):
             new.__nb_objects
+
+    def test_to_json_string(self):
+        """ Test convert json into string """
+
+        r1 = Rectangle(10, 7, 2, 8)
+        s1 = Square(10, 7, 2)
+
+        tests = [
+            f"[{str(r1.to_dictionary())}]",
+            f"[{str(s1.to_dictionary())}]",
+            f"[{str(r1.to_dictionary())}, {str(s1.to_dictionary())}]"
+        ]
+        equal_to = [
+            Base.to_json_string([r1.to_dictionary()]),
+            Base.to_json_string([s1.to_dictionary()]),
+            Base.to_json_string([r1.to_dictionary(), s1.to_dictionary()])
+        ]
+
+        for i in range(3):
+            self.assertEqual(equal_to[i], tests[i].replace("'", "\""))
