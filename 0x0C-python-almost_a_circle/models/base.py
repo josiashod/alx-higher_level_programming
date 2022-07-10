@@ -2,6 +2,7 @@
 """Base module"""
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -135,3 +136,29 @@ class Base:
                 _list.append(cls.create(**dic))
 
         return (_list)
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ Opens a window and draws all the Rectangles and Squares
+
+        Parameters:
+            list_rectangles (list): list of Rectangles
+            list_squares (list): list of Square
+        """
+
+        turtle.title("0x0C. Python - Almost a circle")
+        for rectangle in list_rectangles:
+            for i in range(2):
+                turtle.forward(rectangle.width)
+                turtle.left(90)
+                turtle.forward(rectangle.height)
+                turtle.left(90)
+
+        for square in list_squares:
+            for i in range(4):
+                turtle.forward(square.size)
+                turtle.left(90)
+
+
+        #calling for the mainloop()
+        turtle.mainloop()
