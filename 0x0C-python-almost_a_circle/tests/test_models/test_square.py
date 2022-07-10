@@ -316,3 +316,20 @@ class TestSquare(unittest.TestCase):
             os.remove("Square.csv")
         finally:
             pass
+
+    def test_load_from_file_csv(self):
+        """ Test load CSV file """
+        s1 = Square(5)
+        s2 = Square(8, 2, 5)
+
+        linput = [s1, s2]
+        Square.save_to_file_csv(linput)
+        loutput = Square.load_from_file_csv()
+
+        for i in range(len(linput)):
+            self.assertEqual(linput[i].__str__(), loutput[i].__str__())
+        
+        try:
+            os.remove("Square.csv")
+        finally:
+            pass

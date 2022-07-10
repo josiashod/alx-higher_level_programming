@@ -353,3 +353,20 @@ class TestRectangle(unittest.TestCase):
             os.remove("Rectangle.csv")
         finally:
             pass
+
+    def test_load_from_file_csv(self):
+        """ Test load CSV file """
+        r1 = Rectangle(5, 5)
+        r2 = Rectangle(8, 2, 5, 5)
+
+        linput = [r1, r2]
+        Rectangle.save_to_file_csv(linput)
+        loutput = Rectangle.load_from_file_csv()
+
+        for i in range(len(linput)):
+            self.assertEqual(linput[i].__str__(), loutput[i].__str__())
+
+        try:
+            os.remove("Rectangle.csv")
+        finally:
+            pass
