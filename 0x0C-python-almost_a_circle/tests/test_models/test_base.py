@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 """ Module for test Base class """
+import os
 import unittest
+from io import StringIO
+from unittest.mock import patch
+
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -76,3 +80,40 @@ class TestBaseMethods(unittest.TestCase):
 
         for i in range(3):
             self.assertEqual(equal_to[i], tests[i].replace("'", "\""))
+
+    def test_save_to_file_1(self):
+        """ Test JSON file """
+
+        Square.save_to_file(None)
+        res = "[]\n"
+        with open("Square.json", "r") as file:
+            with patch('sys.stdout', new=StringIO()) as str_out:
+                print(file.read())
+                self.assertEqual(str_out.getvalue(), res)
+
+        try:
+            os.remove("Square.json")
+        finally:
+            pass
+
+        Square.save_to_file([])
+        with open("Square.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
+
+    def test_save_to_file_2(self):
+        """ Test JSON file """
+
+        Rectangle.save_to_file(None)
+        res = "[]\n"
+        with open("Rectangle.json", "r") as file:
+            with patch('sys.stdout', new=StringIO()) as str_out:
+                print(file.read())
+                self.assertEqual(str_out.getvalue(), res)
+        try:
+            os.remove("Rectangle.json")
+        finally:
+            pass
+
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
