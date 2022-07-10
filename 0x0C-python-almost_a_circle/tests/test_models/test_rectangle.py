@@ -3,6 +3,9 @@
 import unittest
 from models.rectangle import Rectangle
 from models.base import Base
+from io import StringIO
+from unittest.mock import patch
+
 
 class TestRectangle(unittest.TestCase):
     """ Suite to test Rectangle class """
@@ -113,10 +116,34 @@ class TestRectangle(unittest.TestCase):
         new = Rectangle(4, 8)
         self.assertEqual(32, new.area())
 
+    def test_display(self):
+        """ Test string printed """
+        r1 = Rectangle(2, 5)
+        res = "##\n##\n##\n##\n##\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            r1.display()
+            self.assertEqual(str_out.getvalue(), res)
+
+    def test_display_2(self):
+        """ Test string printed """
+
+        r1 = Rectangle(2, 2)
+        res = "##\n##\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            r1.display()
+            self.assertEqual(str_out.getvalue(), res)
+
+        r1.width = 5
+        res = "#####\n#####\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            r1.display()
+            self.assertEqual(str_out.getvalue(), res)
+
     def test_rectangle_str_empty(self):
         """ Trying to test the output of the str of an empty rectangle """
 
-        self.assertEqual("[Rectangle] (1) 0/0 - 0/0", str(self.empty_rectangle))
+        _attempt = "[Rectangle] (1) 0/0 - 0/0"
+        self.assertEqual(_attempt, str(self.empty_rectangle))
 
     def test_rectangle_str_empty(self):
         """ Trying to test the output of the str of a rectangle """
@@ -144,3 +171,60 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.rectangle.width, 4)
         self.assertEqual(self.rectangle.y, 5)
         self.assertEqual(self.rectangle.x, 6)
+
+    def test_to_dictionary(self):
+        """ Test dictionary returned """
+        r1 = Rectangle(1, 2, 3, 4, 1)
+        res = "[Rectangle] (1) 3/4 - 1/2\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(r1)
+            self.assertEqual(str_out.getvalue(), res)
+
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 3)
+        self.assertEqual(r1.y, 4)
+        self.assertEqual(r1.id, 1)
+
+        res = "<class 'dict'>\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(type(r1.to_dictionary()))
+            self.assertEqual(str_out.getvalue(), res)
+
+        res = "{'id': 1, 'width': 1, 'height': 2, 'x': 3, 'y': 4}\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(r1.to_dictionary())
+            self.assertEqual(str_out.getvalue(), res)
+
+    def test_to_dictionary_2(self):
+        """ Test dictionary returned """
+        r1 = Rectangle(2, 2, 2, 2)
+        res = "[Rectangle] (3) 2/2 - 2/2\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(r1)
+            self.assertEqual(str_out.getvalue(), res)
+
+        r2 = Rectangle(5, 7)
+        res = "[Rectangle] (4) 0/0 - 5/7\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(r2)
+            self.assertEqual(str_out.getvalue(), res)
+
+        r1_dictionary = r1.to_dictionary()
+        r2.update(**r1_dictionary)
+
+        self.assertEqual(r1.width, r2.width)
+        self.assertEqual(r1.height, r2.height)
+        self.assertEqual(r1.x, r2.x)
+        self.assertEqual(r1.y, r2.y)
+        self.assertEqual(r1.id, r2.id)
+
+        res = "<class 'dict'>\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(type(r1_dictionary))
+            self.assertEqual(str_out.getvalue(), res)
+
+        res = "{'id': 3, 'width': 2, 'height': 2, 'x': 2, 'y': 2}\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(r1_dictionary)
+            self.assertEqual(str_out.getvalue(), res)
