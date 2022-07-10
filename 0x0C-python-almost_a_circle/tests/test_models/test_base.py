@@ -117,3 +117,27 @@ class TestBaseMethods(unittest.TestCase):
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), "[]")
+
+    def test_from_json_string(self):
+        """ Test JSON file """
+
+        r1 = Rectangle(10, 7, 2, 8)
+        s1 = Square(10, 7, 2)
+
+        tests = [
+            [r1.to_dictionary()],
+            [s1.to_dictionary()],
+            [r1.to_dictionary(), s1.to_dictionary()]
+        ]
+
+        equal_to = [
+            Base.to_json_string([r1.to_dictionary()]),
+            Base.to_json_string([s1.to_dictionary()]),
+            Base.to_json_string([r1.to_dictionary(), s1.to_dictionary()])
+        ]
+
+        # convert it into list
+        equal_to = [Base.from_json_string(el) for el in equal_to]
+
+        for i in range(3):
+            self.assertEqual(equal_to[i], tests[i])
