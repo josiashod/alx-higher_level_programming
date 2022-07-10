@@ -1,10 +1,13 @@
 #!/usr/bin/python3
 """ Module for test Square class """
+import csv
+import os
 import unittest
-from models.square import Square
-from models.base import Base
 from io import StringIO
 from unittest.mock import patch
+
+from models.base import Base
+from models.square import Square
 
 
 class TestSquare(unittest.TestCase):
@@ -151,7 +154,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(self.square.width, 4)
         self.assertEqual(self.square.y, 5)
         self.assertEqual(self.square.x, 6)
-    
+
     def test_to_dictionary(self):
         """ Test dictionary returned """
 
@@ -250,3 +253,66 @@ class TestSquare(unittest.TestCase):
 
         for i in range(len(linput)):
             self.assertEqual(linput[i].__str__(), loutput[i].__str__())
+        
+        try:
+            os.remove("Square.json")
+        finally:
+            pass
+
+    def test_csv_1(self):
+        """ Test CSV file conversion """
+
+        Square.save_to_file_csv([])
+        res = []
+        with open("Square.csv", "r") as file:
+            self.assertEqual(list(csv.reader(file)), res)
+        try:
+            os.remove("Square.csv")
+        finally:
+            pass
+
+        Square.save_to_file_csv(None)
+        res = []
+        with open("Square.csv", "r") as file:
+            self.assertEqual(list(csv.reader(file)), res)
+        try:
+            os.remove("Square.csv")
+        finally:
+            pass
+
+    def test_csv_2(self):
+        """ Test load JSON file """
+
+        r1 = Square(5)
+        r2 = Square(8, 2, 5)
+
+        Square.save_to_file_csv([r1])
+        res = [['id', 'size', 'x', 'y'], ['3', '5', '0', '0']]
+        with open("Square.csv", "r") as file:
+            self.assertEqual(list(csv.reader(file)), res)
+        try:
+            os.remove("Square.csv")
+        finally:
+            pass
+
+        Square.save_to_file_csv([r2])
+        res = [['id', 'size', 'x', 'y'], ['4', '8', '2', '5']]
+        with open("Square.csv", "r") as file:
+            self.assertEqual(list(csv.reader(file)), res)
+        try:
+            os.remove("Square.csv")
+        finally:
+            pass
+
+        Square.save_to_file_csv([r1, r2])
+        res = [
+            ['id', 'size', 'x', 'y'],
+            ['3', '5', '0', '0'],
+            ['4', '8', '2', '5']
+        ]
+        with open("Square.csv", "r") as file:
+            self.assertEqual(list(csv.reader(file)), res)
+        try:
+            os.remove("Square.csv")
+        finally:
+            pass

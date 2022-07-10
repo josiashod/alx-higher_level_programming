@@ -109,6 +109,7 @@ class TestBaseMethods(unittest.TestCase):
             with patch('sys.stdout', new=StringIO()) as str_out:
                 print(file.read())
                 self.assertEqual(str_out.getvalue(), res)
+
         try:
             os.remove("Rectangle.json")
         finally:
@@ -150,7 +151,6 @@ class TestBaseMethods(unittest.TestCase):
 
         r2 = Rectangle.create(width=10, height=7, x=2, y=8)
         s2 = Square.create(size=10, x=7, y=2)
-
 
         self.assertEqual(r1.width, r2.width)
         self.assertEqual(r1.height, r2.height)

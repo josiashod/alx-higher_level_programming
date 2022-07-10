@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Base module"""
 import json
+import csv
 
 
 class Base:
@@ -50,14 +51,14 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """ Returns the JSON string representation of list_dictionaries
+        """ Writes the JSON string representation of list_objs to a file
 
         Parameters:
             list_objs (list): a list of instances who inherits of Base
             - example: list of Rectangle or list of Square instances
         """
 
-        if list_objs is None:
+        if list_objs is None or len(list_objs) == 0:
             list_objs = []
 
         list_objs = [obj.to_dictionary() for obj in list_objs]
@@ -65,6 +66,32 @@ class Base:
 
         with open(f"{cls.__name__}.json", "w") as f:
             f.write(json_string)
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Serializes the list of object in CSV file
+
+        Parameters:
+            list_objs (list): a list of instances who inherits of Base
+            - example: list of Rectangle or list of Square instances
+        """
+
+        if list_objs is None:
+            with open(f"{cls.__name__}.csv", "w", newline='') as f:
+                csv.writer(f).writerows([])
+            return
+
+        list_objs = [obj.to_dictionary() for obj in list_objs]
+
+        with open(f"{cls.__name__}.csv", "w", newline='') as f:
+            writer = csv.writer(f)
+
+            if len(list_objs) > 0:
+                header = list_objs[0].keys()
+                writer.writerow(header)
+
+            data = [obj.values() for obj in list_objs]
+            writer.writerows(data)
 
     @classmethod
     def create(cls, **dictionary):
@@ -87,5 +114,24 @@ class Base:
         with open(f"{cls.__name__}.json") as f:
             _list = cls.from_json_string(f.read())
             _list = ([cls.create(**dic) for dic in _list])
+
+        return (_list)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Returns a list of instances """
+
+        _list = []
+        with open(f"{cls.__name__}.csv") as f:
+            reader = list(csv.reader(f))
+            header = reader[0]
+
+            _list = []
+            for i in range(1, len(reader)):
+                dic = {}
+                for j in range(len(header)):
+                    dic[header[j]] = int(reader[i][j])
+
+                _list.append(cls.create(**dic))
 
         return (_list)

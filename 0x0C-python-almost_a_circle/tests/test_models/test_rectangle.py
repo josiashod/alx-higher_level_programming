@@ -1,10 +1,13 @@
 #!/usr/bin/python3
 """ Module for test Rectangle class """
+import csv
+import os
 import unittest
-from models.rectangle import Rectangle
-from models.base import Base
 from io import StringIO
 from unittest.mock import patch
+
+from models.base import Base
+from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
@@ -287,3 +290,66 @@ class TestRectangle(unittest.TestCase):
 
         for i in range(len(linput)):
             self.assertEqual(linput[i].__str__(), loutput[i].__str__())
+
+        try:
+            os.remove("Rectangle.json")
+        finally:
+            pass
+
+    def test_csv_1(self):
+        """ Test CSV file conversion """
+
+        Rectangle.save_to_file_csv([])
+        res = []
+        with open("Rectangle.csv", "r") as file:
+            self.assertEqual(list(csv.reader(file)), res)
+        try:
+            os.remove("Rectangle.csv")
+        finally:
+            pass
+
+        Rectangle.save_to_file_csv(None)
+        res = []
+        with open("Rectangle.csv", "r") as file:
+            self.assertEqual(list(csv.reader(file)), res)
+        try:
+            os.remove("Rectangle.csv")
+        finally:
+            pass
+
+    def test_csv_2(self):
+        """ Test load JSON file """
+
+        r1 = Rectangle(5, 5)
+        r2 = Rectangle(8, 2, 5, 5)
+
+        Rectangle.save_to_file_csv([r1])
+        res = [['id', 'width', 'height', 'x', 'y'], ['3', '5', '5', '0', '0']]
+        with open("Rectangle.csv", "r") as file:
+            self.assertEqual(list(csv.reader(file)), res)
+        try:
+            os.remove("Rectangle.csv")
+        finally:
+            pass
+
+        Rectangle.save_to_file_csv([r2])
+        res = [['id', 'width', 'height', 'x', 'y'], ['4', '8', '2', '5', '5']]
+        with open("Rectangle.csv", "r") as file:
+            self.assertEqual(list(csv.reader(file)), res)
+        try:
+            os.remove("Rectangle.csv")
+        finally:
+            pass
+
+        Rectangle.save_to_file_csv([r1, r2])
+        res = [
+            ['id', 'width', 'height', 'x', 'y'],
+            ['3', '5', '5', '0', '0'],
+            ['4', '8', '2', '5', '5']
+        ]
+        with open("Rectangle.csv", "r") as file:
+            self.assertEqual(list(csv.reader(file)), res)
+        try:
+            os.remove("Rectangle.csv")
+        finally:
+            pass
