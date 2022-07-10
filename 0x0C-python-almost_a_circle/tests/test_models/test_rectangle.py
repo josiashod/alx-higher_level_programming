@@ -122,3 +122,25 @@ class TestRectangle(unittest.TestCase):
         """ Trying to test the output of the str of a rectangle """
 
         self.assertEqual("[Rectangle] (2) 0/0 - 4/2", str(self.rectangle))
+
+    def test_rectangle_update_1(self):
+        """ Trying to test update of the rectangle """
+
+        self.rectangle.update(10, 3, 4, 5, 6)
+
+        self.assertEqual(self.rectangle.id, 10)
+        self.assertEqual(self.rectangle.width, 3)
+        self.assertEqual(self.rectangle.height, 4)
+        self.assertEqual(self.rectangle.x, 5)
+        self.assertEqual(self.rectangle.y, 6)
+
+    def test_rectangle_update_2(self):
+        """ Trying to test update of the rectangle """
+
+        self.rectangle.update(id=10, height=3, width=4, y=5, x=6)
+
+        self.assertEqual(self.rectangle.id, 10)
+        self.assertEqual(self.rectangle.height, 3)
+        self.assertEqual(self.rectangle.width, 4)
+        self.assertEqual(self.rectangle.y, 5)
+        self.assertEqual(self.rectangle.x, 6)

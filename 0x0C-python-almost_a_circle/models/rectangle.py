@@ -111,11 +111,11 @@ class Rectangle(Base):
 
         Parameters:
             *args (list): list of arguments
-                1st argument should be the id attribute
-                2nd argument should be the width attribute
-                3rd argument should be the height attribute
-                4th argument should be the x attribute
-                5th argument should be the y attribute
+                1st argument: should be the id attribute
+                2nd argument: should be the width attribute
+                3rd argument: should be the height attribute
+                4th argument: should be the x attribute
+                5th argument: should be the y attribute
             **kwargs (dict): dictionnary of arguments
                 width (int): The width of the rectangle.
                 height (int): The height of the rectangle.

@@ -109,3 +109,25 @@ class TestSquare(unittest.TestCase):
         """ Trying to test the output of the str of a square """
 
         self.assertEqual("[Square] (2) 0/0 - 4", str(self.square))
+
+    def test_square_update_1(self):
+        """ Trying to test update of the square """
+
+        self.square.update(10, 4, 5, 6)
+
+        self.assertEqual(self.square.id, 10)
+        self.assertEqual(self.square.width, 4)
+        self.assertEqual(self.square.height, 4)
+        self.assertEqual(self.square.x, 5)
+        self.assertEqual(self.square.y, 6)
+
+    def test_square_update_2(self):
+        """ Trying to test update of the square """
+
+        self.square.update(id=10, size=4, x=6, y=5)
+
+        self.assertEqual(self.square.id, 10)
+        self.assertEqual(self.square.height, 4)
+        self.assertEqual(self.square.width, 4)
+        self.assertEqual(self.square.y, 5)
+        self.assertEqual(self.square.x, 6)

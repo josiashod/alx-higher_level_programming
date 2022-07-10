@@ -43,10 +43,10 @@ class Square(Rectangle):
 
         Parameters:
             *args (list): list of arguments
-                1st argument should be the id attribute
-                2nd argument should be the size attribute
-                3rd argument should be the x attribute
-                4th argument should be the y attribute
+                1st argument: should be the id attribute
+                2nd argument: should be the size attribute
+                3rd argument: should be the x attribute
+                4th argument: should be the y attribute
             **kwargs (dict): dictionnary of arguments
                 size (int): The size of the square.
                 x (int): The x value.
