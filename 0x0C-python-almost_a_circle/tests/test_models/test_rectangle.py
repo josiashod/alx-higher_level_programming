@@ -174,6 +174,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_to_dictionary(self):
         """ Test dictionary returned """
+
         r1 = Rectangle(1, 2, 3, 4, 1)
         res = "[Rectangle] (1) 3/4 - 1/2\n"
         with patch('sys.stdout', new=StringIO()) as str_out:
@@ -198,6 +199,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_to_dictionary_2(self):
         """ Test dictionary returned """
+
         r1 = Rectangle(2, 2, 2, 2)
         res = "[Rectangle] (3) 2/2 - 2/2\n"
         with patch('sys.stdout', new=StringIO()) as str_out:
