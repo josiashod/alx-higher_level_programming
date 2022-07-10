@@ -3,6 +3,9 @@
 import unittest
 from models.square import Square
 from models.base import Base
+from io import StringIO
+from unittest.mock import patch
+
 
 class TestSquare(unittest.TestCase):
     """ Suite to test Square class """
@@ -100,6 +103,23 @@ class TestSquare(unittest.TestCase):
         new = Square(4)
         self.assertEqual(16, new.area())
 
+    def test_display(self):
+        """ Test string printed """
+        r1 = Square(4)
+        res = "####\n####\n####\n####\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            r1.display()
+            self.assertEqual(str_out.getvalue(), res)
+
+    def test_display_2(self):
+        """ Test string printed """
+
+        r1 = Square(2)
+        res = "##\n##\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            r1.display()
+            self.assertEqual(str_out.getvalue(), res)
+
     def test_square_str_empty(self):
         """ Trying to test the output of the str of an empty square """
 
@@ -131,3 +151,61 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(self.square.width, 4)
         self.assertEqual(self.square.y, 5)
         self.assertEqual(self.square.x, 6)
+    
+    def test_to_dictionary(self):
+        """ Test dictionary returned """
+
+        r1 = Square(2, 3, 4, 1)
+        res = "[Square] (1) 3/4 - 2\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(r1)
+            self.assertEqual(str_out.getvalue(), res)
+
+        self.assertEqual(r1.size, 2)
+        self.assertEqual(r1.x, 3)
+        self.assertEqual(r1.y, 4)
+        self.assertEqual(r1.id, 1)
+
+        res = "<class 'dict'>\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(type(r1.to_dictionary()))
+            self.assertEqual(str_out.getvalue(), res)
+
+        res = "{'id': 1, 'size': 2, 'x': 3, 'y': 4}\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(r1.to_dictionary())
+            self.assertEqual(str_out.getvalue(), res)
+
+    def test_to_dictionary_2(self):
+        """ Test dictionary returned """
+
+        r1 = Square(2, 2, 2)
+        res = "[Square] (3) 2/2 - 2\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(r1)
+            self.assertEqual(str_out.getvalue(), res)
+
+        r2 = Square(5)
+        res = "[Square] (4) 0/0 - 5\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(r2)
+            self.assertEqual(str_out.getvalue(), res)
+
+        r1_dictionary = r1.to_dictionary()
+        r2.update(**r1_dictionary)
+
+        self.assertEqual(r1.size, r2.size)
+        self.assertEqual(r1.x, r2.x)
+        self.assertEqual(r1.y, r2.y)
+        self.assertEqual(r1.id, r2.id)
+
+        res = "<class 'dict'>\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(type(r1_dictionary))
+            self.assertEqual(str_out.getvalue(), res)
+
+        res = "{'id': 3, 'size': 2, 'x': 2, 'y': 2}\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(r1_dictionary)
+            self.assertEqual(str_out.getvalue(), res)
+
