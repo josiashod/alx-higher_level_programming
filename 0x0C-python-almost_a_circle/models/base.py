@@ -65,10 +65,10 @@ class Base:
 
         with open(f"{cls.__name__}.json", "w") as f:
             f.write(json_string)
-    
+
     @classmethod
     def create(cls, **dictionary):
-        """ Returns an instance with all attributes already 
+        """ Returns an instance with all attributes already
 
         Parameters:
             dictionary (dict): key/value (keyworded arguments)
@@ -78,3 +78,14 @@ class Base:
         _new.update(**dictionary)
 
         return (_new)
+
+    @classmethod
+    def load_from_file(cls):
+        """ Returns a list of instances """
+
+        _list = []
+        with open(f"{cls.__name__}.json") as f:
+            _list = cls.from_json_string(f.read())
+            _list = ([cls.create(**dic) for dic in _list])
+
+        return (_list)
