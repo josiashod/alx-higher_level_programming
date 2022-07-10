@@ -65,3 +65,16 @@ class Base:
 
         with open(f"{cls.__name__}.json", "w") as f:
             f.write(json_string)
+    
+    @classmethod
+    def create(cls, **dictionary):
+        """ Returns an instance with all attributes already 
+
+        Parameters:
+            dictionary (dict): key/value (keyworded arguments)
+        """
+
+        _new = cls(0, 0)
+        _new.update(**dictionary)
+
+        return (_new)

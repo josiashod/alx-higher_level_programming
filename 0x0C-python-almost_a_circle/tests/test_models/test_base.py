@@ -141,3 +141,22 @@ class TestBaseMethods(unittest.TestCase):
 
         for i in range(3):
             self.assertEqual(equal_to[i], tests[i])
+
+    def test_create(self):
+        """ Test object creation """
+
+        r1 = Rectangle(10, 7, 2, 8)
+        s1 = Square(10, 7, 2)
+
+        r2 = Rectangle.create(width=10, height=7, x=2, y=8)
+        s2 = Square.create(size=10, x=7, y=2)
+
+
+        self.assertEqual(r1.width, r2.width)
+        self.assertEqual(r1.height, r2.height)
+        self.assertEqual(r1.x, r2.x)
+        self.assertEqual(r1.y, r2.y)
+
+        self.assertEqual(s1.size, s2.size)
+        self.assertEqual(s1.x, s2.x)
+        self.assertEqual(s1.y, s2.y)
