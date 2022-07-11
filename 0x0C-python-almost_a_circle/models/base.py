@@ -115,6 +115,10 @@ class Base:
         """ Returns a list of instances """
 
         _list = []
+
+        if os.path.exists(filename) is False:
+            return _list
+
         with open(f"{cls.__name__}.json") as f:
             _list = cls.from_json_string(f.read())
             _list = ([cls.create(**dic) for dic in _list])
@@ -126,6 +130,10 @@ class Base:
         """ Returns a list of instances """
 
         _list = []
+
+        if os.path.exists(filename) is False:
+            return _list
+
         with open(f"{cls.__name__}.csv") as f:
             reader = list(csv.reader(f))
             header = reader[0]
