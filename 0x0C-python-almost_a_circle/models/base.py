@@ -3,6 +3,7 @@
 import json
 import csv
 import turtle
+import os
 
 
 class Base:
@@ -116,7 +117,7 @@ class Base:
 
         _list = []
 
-        if os.path.exists(filename) is False:
+        if os.path.exists(f"{cls.__name__}.json") is False:
             return _list
 
         with open(f"{cls.__name__}.json") as f:
@@ -130,6 +131,10 @@ class Base:
         """ Returns a list of instances """
 
         _list = []
+
+        if os.path.exists(f"{cls.__name__}.csv") is False:
+            return _list
+
         with open(f"{cls.__name__}.csv") as f:
             reader = list(csv.reader(f))
             header = reader[0]
