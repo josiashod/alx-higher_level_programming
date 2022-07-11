@@ -159,6 +159,4 @@ class Base:
                 turtle.forward(square.size)
                 turtle.left(90)
 
-
-        #calling for the mainloop()
         turtle.mainloop()
