@@ -2,7 +2,6 @@
 """ Module that contains class Square,
 inheritance of class Rectangle
 """
-from numpy import size
 from models.rectangle import Rectangle
 
 
