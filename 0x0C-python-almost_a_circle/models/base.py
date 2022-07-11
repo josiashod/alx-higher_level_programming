@@ -77,21 +77,17 @@ class Base:
             - example: list of Rectangle or list of Square instances
         """
 
-        if list_objs is None:
-            with open(f"{cls.__name__}.csv", "w", newline='') as f:
-                csv.writer(f).writerows([])
-            return
+        if cls.__name__ == "Rectangle":
+            list_dic = [0, 0, 0, 0, 0]
+            header = ['id', 'width', 'height', 'x', 'y']
+        else:
+            list_dic = [0, 0, 0, 0]
+            header = ['id', 'size', 'x', 'y']
 
-        list_objs = [obj.to_dictionary() for obj in list_objs]
-
+        data = [list(obj.to_dictionary().values()) for obj in list_objs]
         with open(f"{cls.__name__}.csv", "w", newline='') as f:
             writer = csv.writer(f)
-
-            if len(list_objs) > 0:
-                header = list_objs[0].keys()
-                writer.writerow(header)
-
-            data = [obj.values() for obj in list_objs]
+            writer.writerow(header)
             writer.writerows(data)
 
     @classmethod
@@ -102,9 +98,12 @@ class Base:
             dictionary (dict): key/value (keyworded arguments)
         """
 
-        _new = cls(0, 0)
-        _new.update(**dictionary)
+        if cls.__name__ == "Rectangle":
+            _new = cls(1, 1)
+        else:
+            _new = cls(1)
 
+        _new.update(**dictionary)
         return (_new)
 
     @classmethod

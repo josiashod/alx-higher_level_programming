@@ -16,7 +16,6 @@ class TestRectangle(unittest.TestCase):
     def setUp(self):
         """ Method invoked for each test """
         Base._Base__nb_objects = 0
-        self.empty_rectangle = Rectangle(0, 0)
         self.rectangle = Rectangle(4, 2)
 
     def test_new_rectangle(self):
@@ -26,7 +25,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(new.height, 1)
         self.assertEqual(new.x, 0)
         self.assertEqual(new.y, 0)
-        self.assertEqual(new.id, 3)
+        self.assertEqual(new.id, 2)
 
     def test_new_rectangle_2(self):
         """ Test new rectangle with all attrs """
@@ -142,17 +141,6 @@ class TestRectangle(unittest.TestCase):
             r1.display()
             self.assertEqual(str_out.getvalue(), res)
 
-    def test_rectangle_str_empty(self):
-        """ Trying to test the output of the str of an empty rectangle """
-
-        _attempt = "[Rectangle] (1) 0/0 - 0/0"
-        self.assertEqual(_attempt, str(self.empty_rectangle))
-
-    def test_rectangle_str_empty(self):
-        """ Trying to test the output of the str of a rectangle """
-
-        self.assertEqual("[Rectangle] (2) 0/0 - 4/2", str(self.rectangle))
-
     def test_rectangle_update_1(self):
         """ Trying to test update of the rectangle """
 
@@ -204,13 +192,13 @@ class TestRectangle(unittest.TestCase):
         """ Test dictionary returned """
 
         r1 = Rectangle(2, 2, 2, 2)
-        res = "[Rectangle] (3) 2/2 - 2/2\n"
+        res = "[Rectangle] (2) 2/2 - 2/2\n"
         with patch('sys.stdout', new=StringIO()) as str_out:
             print(r1)
             self.assertEqual(str_out.getvalue(), res)
 
         r2 = Rectangle(5, 7)
-        res = "[Rectangle] (4) 0/0 - 5/7\n"
+        res = "[Rectangle] (3) 0/0 - 5/7\n"
         with patch('sys.stdout', new=StringIO()) as str_out:
             print(r2)
             self.assertEqual(str_out.getvalue(), res)
@@ -229,7 +217,7 @@ class TestRectangle(unittest.TestCase):
             print(type(r1_dictionary))
             self.assertEqual(str_out.getvalue(), res)
 
-        res = "{'id': 3, 'width': 2, 'height': 2, 'x': 2, 'y': 2}\n"
+        res = "{'id': 2, 'width': 2, 'height': 2, 'x': 2, 'y': 2}\n"
         with patch('sys.stdout', new=StringIO()) as str_out:
             print(r1_dictionary)
             self.assertEqual(str_out.getvalue(), res)
@@ -324,7 +312,7 @@ class TestRectangle(unittest.TestCase):
         r2 = Rectangle(8, 2, 5, 5)
 
         Rectangle.save_to_file_csv([r1])
-        res = [['id', 'width', 'height', 'x', 'y'], ['3', '5', '5', '0', '0']]
+        res = [['id', 'width', 'height', 'x', 'y'], ['2', '5', '5', '0', '0']]
         with open("Rectangle.csv", "r") as file:
             self.assertEqual(list(csv.reader(file)), res)
         try:
@@ -333,7 +321,7 @@ class TestRectangle(unittest.TestCase):
             pass
 
         Rectangle.save_to_file_csv([r2])
-        res = [['id', 'width', 'height', 'x', 'y'], ['4', '8', '2', '5', '5']]
+        res = [['id', 'width', 'height', 'x', 'y'], ['3', '8', '2', '5', '5']]
         with open("Rectangle.csv", "r") as file:
             self.assertEqual(list(csv.reader(file)), res)
         try:
@@ -344,8 +332,8 @@ class TestRectangle(unittest.TestCase):
         Rectangle.save_to_file_csv([r1, r2])
         res = [
             ['id', 'width', 'height', 'x', 'y'],
-            ['3', '5', '5', '0', '0'],
-            ['4', '8', '2', '5', '5']
+            ['2', '5', '5', '0', '0'],
+            ['3', '8', '2', '5', '5']
         ]
         with open("Rectangle.csv", "r") as file:
             self.assertEqual(list(csv.reader(file)), res)
