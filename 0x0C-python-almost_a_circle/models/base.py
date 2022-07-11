@@ -84,7 +84,11 @@ class Base:
             list_dic = [0, 0, 0, 0]
             header = ['id', 'size', 'x', 'y']
 
+        if list_objs is None:
+            list_objs = []
+
         data = [list(obj.to_dictionary().values()) for obj in list_objs]
+
         with open(f"{cls.__name__}.csv", "w", newline='') as f:
             writer = csv.writer(f)
             writer.writerow(header)

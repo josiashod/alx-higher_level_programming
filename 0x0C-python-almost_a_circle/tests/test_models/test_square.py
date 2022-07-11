@@ -257,7 +257,7 @@ class TestSquare(unittest.TestCase):
         """ Test CSV file conversion """
 
         Square.save_to_file_csv([])
-        res = []
+        res = [['id', 'size', 'x', 'y']]
         with open("Square.csv", "r") as file:
             self.assertEqual(list(csv.reader(file)), res)
         try:
@@ -266,7 +266,7 @@ class TestSquare(unittest.TestCase):
             pass
 
         Square.save_to_file_csv(None)
-        res = []
+        res = [['id', 'size', 'x', 'y']]
         with open("Square.csv", "r") as file:
             self.assertEqual(list(csv.reader(file)), res)
         try:

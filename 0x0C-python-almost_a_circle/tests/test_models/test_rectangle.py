@@ -288,7 +288,7 @@ class TestRectangle(unittest.TestCase):
         """ Test CSV file conversion """
 
         Rectangle.save_to_file_csv([])
-        res = []
+        res = [['id', 'width', 'height', 'x', 'y']]
         with open("Rectangle.csv", "r") as file:
             self.assertEqual(list(csv.reader(file)), res)
         try:
@@ -297,7 +297,7 @@ class TestRectangle(unittest.TestCase):
             pass
 
         Rectangle.save_to_file_csv(None)
-        res = []
+        res = [['id', 'width', 'height', 'x', 'y']]
         with open("Rectangle.csv", "r") as file:
             self.assertEqual(list(csv.reader(file)), res)
         try:
