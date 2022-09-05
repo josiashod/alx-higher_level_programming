@@ -190,7 +190,7 @@ guillaume@ubuntu:~/0x12$
 -   Directory: `0x12-javascript-warm_up`
 -   File: `2-arguments.js`
 
- Done? Help Check your code
+ <br>
 
 ### 3\. Value of my argument
 
@@ -218,7 +218,7 @@ guillaume@ubuntu:~/0x12$
 -   Directory: `0x12-javascript-warm_up`
 -   File: `3-value_argument.js`
 
- Done? Help Check your code
+ <br>
 
 ### 4\. Create a sentence
 
@@ -280,7 +280,7 @@ guillaume@ubuntu:~/0x12$
 -   Directory: `0x12-javascript-warm_up`
 -   File: `5-to_integer.js`
 
- Done? Help Check your code
+ <br>
 
 ### 6\. Loop to languages
 
@@ -391,7 +391,7 @@ guillaume@ubuntu:~/0x12$
 -   Directory: `0x12-javascript-warm_up`
 -   File: `8-square.js`
 
- Done? Help Check your code
+ <br>
 
 ### 9\. Add
 
@@ -489,7 +489,7 @@ guillaume@ubuntu:~/0x12$
 -   Directory: `0x12-javascript-warm_up`
 -   File: `11-second_biggest.js`
 
- Done? Help Check your code
+ <br>
 
 ### 12\. Object
 
