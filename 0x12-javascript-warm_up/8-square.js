@@ -1,7 +1,6 @@
 #!/usr/bin/node
 const argv = process.argv;
 const size = Number.parseInt(argv[2]);
-let string = '';
 
 if (!size) {
   console.log('Missing size');
