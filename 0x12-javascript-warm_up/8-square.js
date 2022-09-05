@@ -4,12 +4,9 @@ const size = Number.parseInt(argv[2]);
 let string = '';
 
 if (!size) {
-  console.log('Missing number of occurrences');
+  console.log('Missing size');
 } else {
   for (let i = 0; i < size; i++) {
-    string += 'X';
-  }
-  for (let i = 0; i < size; i++) {
-    console.log(string);
+    console.log('X'.repeat(size));
   }
 }
