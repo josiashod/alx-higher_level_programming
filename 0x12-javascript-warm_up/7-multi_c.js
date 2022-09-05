@@ -5,8 +5,8 @@ let myNumber = Number.parseInt(argv[2]);
 if (!myNumber) {
   console.log('Missing number of occurrences');
 } else {
-    do {
-	console.log('C is fun');
-	myNumber--;
-    } while(myNumber > 0);
+  do {
+    console.log('C is fun');
+    myNumber--;
+  } while (myNumber > 0);
 }
