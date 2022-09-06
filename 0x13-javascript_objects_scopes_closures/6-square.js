@@ -14,7 +14,7 @@ module.exports = class Square {
     this.size *= 2;
   }
 
-  charPrint(char = 'X') {
+  charPrint (char = 'X') {
     for (let i = 0; i < this.size; i++) { console.log(char.repeat(this.size)); }
   }
 };
