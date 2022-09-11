@@ -1,9 +1,8 @@
 0x0F. Python - Object-relational mapping
 ========================================
 
-Python OOP SQL MySQL ORM SQLAlchemy
-
--   By: Guillaume
+-   By Guillaume
+-   Weight: 1
 
 Before you start...
 -----------------
@@ -86,13 +85,6 @@ At the end of this project, you are expected to be able to [explain to anyone](
 -   What ORM means
 -   How to map a Python Class to a MySQL table
 
-### Copyright - Plagiarism
-
--   You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
--   You will not be able to meet the objectives of this or any following project by copying and pasting someone else's work.
--   You are not allowed to publish any content of this project.
--   Any form of plagiarism is strictly forbidden and will result in removal from the program.
-
 Requirements
 ------------
 
@@ -105,7 +97,7 @@ Requirements
 -   All your files should end with a new line
 -   The first line of all your files should be exactly `#!/usr/bin/python3`
 -   A `README.md` file, at the root of the folder of the project, is mandatory
--   Your code should use the pycodestyle (version `2.8.*`)
+-   Your code should use the pycodestyle (version 2.7.*)
 -   All your files must be executable
 -   The length of your files will be tested using `wc`
 -   All your modules should have a documentation (`python3 -c 'print(__import__("my_module").__doc__)'`)
@@ -205,7 +197,7 @@ guillaume@ubuntu:~/0x0F$
 -   Directory: `0x0F-python-object_relational_mapping`
 -   File: `0-select_states.py`
 
-<br>
+ Done? Help Get a sandbox
 
 ### 1\. Filter states
 
@@ -249,7 +241,7 @@ guillaume@ubuntu:~/0x0F$
 -   Directory: `0x0F-python-object_relational_mapping`
 -   File: `1-filter_states.py`
 
-<br>
+ Done? Help Get a sandbox
 
 ### 2\. Filter states by user input
 
@@ -293,7 +285,7 @@ guillaume@ubuntu:~/0x0F$
 -   Directory: `0x0F-python-object_relational_mapping`
 -   File: `2-my_filter_states.py`
 
-<br>
+ Done? Help Get a sandbox
 
 ### 3\. SQL Injection...
 
@@ -350,7 +342,7 @@ guillaume@ubuntu:~/0x0F$
 -   Directory: `0x0F-python-object_relational_mapping`
 -   File: `3-my_safe_filter_states.py`
 
-<br>
+ Done? Help Get a sandbox
 
 ### 4\. Cities by states
 
@@ -421,7 +413,7 @@ guillaume@ubuntu:~/0x0F$
 -   Directory: `0x0F-python-object_relational_mapping`
 -   File: `4-cities_by_state.py`
 
-<br>
+ Done? Help Get a sandbox
 
 ### 5\. All cities by state
 
@@ -482,13 +474,13 @@ guillaume@ubuntu:~/0x0F$
 -   Directory: `0x0F-python-object_relational_mapping`
 -   File: `5-filter_cities.py`
 
-<br>
+ Done? Help Get a sandbox
 
 ### 6\. First state model
 
 mandatory
 
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/f84fe6edb9436c8560996c6d72e17ea51dab28e1.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20220910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220910T091651Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=565809ed0e8c2f4f484edf85f1ec183ef0f7e3e3be05bdf28252e5d5ec6979b3)
+![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/f84fe6edb9436c8560996c6d72e17ea51dab28e1.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20220303%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220303T161831Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=a3638749d990d0ff2227922fecc85a0380e4a69c9c0f696428a5a716cd1aeb49)
 
 Write a python file that contains the class definition of a `State` and an instance `Base = declarative_base()`:
 
@@ -541,7 +533,7 @@ guillaume@ubuntu:~/0x0F$
 -   Directory: `0x0F-python-object_relational_mapping`
 -   File: `model_state.py`
 
-<br>
+ Done? Help
 
 ### 7\. All states via SQLAlchemy
 
@@ -582,7 +574,7 @@ guillaume@ubuntu:~/0x0F$
 -   Directory: `0x0F-python-object_relational_mapping`
 -   File: `7-model_state_fetch_all.py`
 
-<br>
+ Done? Help Get a sandbox
 
 ### 8\. First state
 
@@ -615,7 +607,7 @@ guillaume@ubuntu:~/0x0F$
 -   Directory: `0x0F-python-object_relational_mapping`
 -   File: `8-model_state_fetch_first.py`
 
-<br>
+ Done? Help Get a sandbox
 
 ### 9\. Contains `a`
 
@@ -649,7 +641,7 @@ guillaume@ubuntu:~/0x0F$
 -   Directory: `0x0F-python-object_relational_mapping`
 -   File: `9-model_state_filter_a.py`
 
-<br>
+ Done? Help Get a sandbox
 
 ### 10\. Get a state
 
@@ -683,7 +675,7 @@ guillaume@ubuntu:~/0x0F$
 -   Directory: `0x0F-python-object_relational_mapping`
 -   File: `10-model_state_my_get.py`
 
-<br>
+ Done? Help Get a sandbox
 
 ### 11\. Add a new state
 
@@ -720,7 +712,7 @@ guillaume@ubuntu:~/0x0F$
 -   Directory: `0x0F-python-object_relational_mapping`
 -   File: `11-model_state_insert.py`
 
-<br>
+ Done? Help Get a sandbox
 
 ### 12\. Update a state
 
@@ -756,7 +748,7 @@ guillaume@ubuntu:~/0x0F$
 -   Directory: `0x0F-python-object_relational_mapping`
 -   File: `12-model_state_update_id_2.py`
 
-<br>
+ Done? Help Get a sandbox
 
 ### 13\. Delete states
 
@@ -787,7 +779,7 @@ guillaume@ubuntu:~/0x0F$
 -   Directory: `0x0F-python-object_relational_mapping`
 -   File: `13-model_state_delete_a.py`
 
-<br>
+ Done? Help Get a sandbox
 
 ### 14\. Cities in state
 
@@ -868,3 +860,193 @@ guillaume@ubuntu:~/0x0F$
 -   GitHub repository: `alx-higher_level_programming`
 -   Directory: `0x0F-python-object_relational_mapping`
 -   File: `model_city.py, 14-model_city_fetch_by_state.py`
+
+### 15\. City relationship
+
+#advanced
+
+Score: 0.00% (Checks completed: 0.00%)
+
+Improve the files `model_city.py` and `model_state.py`, and save them as `relationship_city.py` and `relationship_state.py`:
+
+-   `City` class:
+    -   No change
+-   `State` class:
+    -   In addition to previous requirements, the class attribute `cities` must represent a relationship with the class `City`. If the `State` object is deleted, all linked `City` objects must be automatically deleted. Also, the reference from a `City` object to his `State` should be named `state`
+-   You must use the module `SQLAlchemy`
+
+Write a script that creates the `State` "California" with the `City` "San Francisco" from the database `hbtn_0e_100_usa`: (`100-relationship_states_cities.py`)
+
+-   Your script should take 3 arguments: `mysql username`, `mysql password` and `database name`
+-   You must use the module `SQLAlchemy`
+-   Your script should connect to a MySQL server running on `localhost` at port `3306`
+-   You must use the `cities` relationship for all `State` objects
+-   Your code should not be executed when imported
+
+```
+guillaume@ubuntu:~/0x0F$ cat 100-relationship_states_cities.sql
+-- Create the database hbtn_0e_100_usa
+CREATE DATABASE IF NOT EXISTS hbtn_0e_100_usa;
+USE hbtn_0e_100_usa;
+
+SELECT * FROM states;
+SELECT * FROM cities;
+
+guillaume@ubuntu:~/0x0F$ cat 100-relationship_states_cities.sql | mysql -uroot -p
+Enter password:
+ERROR 1146 (42S02) at line 5: Table 'hbtn_0e_100_usa.states' doesn't exist
+guillaume@ubuntu:~/0x0F$ ./100-relationship_states_cities.py root root hbtn_0e_100_usa
+guillaume@ubuntu:~/0x0F$ cat 100-relationship_states_cities.sql | mysql -uroot -p
+Enter password:
+id  name
+1   California
+id  name    state_id
+1   San Francisco   1
+guillaume@ubuntu:~/0x0F$
+
+```
+
+**No test cases needed**
+
+**Repo:**
+
+-   GitHub repository: `alx-higher_level_programming`
+-   Directory: `0x0F-python-object_relational_mapping`
+-   File: `relationship_city.py, relationship_state.py, 100-relationship_states_cities.py`
+
+ Done? Help Check your code Get a sandbox QA Review
+
+### 16\. List relationship
+
+#advanced
+
+Score: 0.00% (Checks completed: 0.00%)
+
+Write a script that lists all `State` objects, and corresponding `City` objects, contained in the database `hbtn_0e_101_usa`
+
+-   Your script should take 3 arguments: `mysql username`, `mysql password` and `database name`
+-   You must use the module `SQLAlchemy`
+-   The connection to your MySQL server must be to `localhost` on port `3306`
+-   You must only use one query to the database
+-   You must use the `cities` relationship for all `State` objects
+-   Results must be sorted in ascending order by `states.id` and `cities.id`
+-   Results must be displayed as they are in the example below
+-   Your code should not be executed when imported
+
+```
+<state id>: <state name>
+<tabulation><city id>: <city name>
+
+```
+
+```
+guillaume@ubuntu:~/0x0F$ cat 101-relationship_states_cities_list.sql
+-- Create states table in hbtn_0e_101_usa with some data
+CREATE DATABASE IF NOT EXISTS hbtn_0e_101_usa;
+USE hbtn_0e_101_usa;
+CREATE TABLE IF NOT EXISTS states (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(256) NOT NULL,
+    PRIMARY KEY (id)
+);
+INSERT INTO states (name) VALUES ("California"), ("Arizona"), ("Texas"), ("New York"), ("Nevada");
+
+CREATE TABLE IF NOT EXISTS cities (
+    id INT NOT NULL AUTO_INCREMENT,
+    state_id INT NOT NULL,
+    name VARCHAR(256) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY(state_id) REFERENCES states(id)
+);
+INSERT INTO cities (state_id, name) VALUES (1, "San Francisco"), (1, "San Jose"), (1, "Los Angeles"), (1, "Fremont"), (1, "Livermore");
+INSERT INTO cities (state_id, name) VALUES (2, "Page"), (2, "Phoenix");
+INSERT INTO cities (state_id, name) VALUES (3, "Dallas"), (3, "Houston"), (3, "Austin");
+INSERT INTO cities (state_id, name) VALUES (4, "New York");
+INSERT INTO cities (state_id, name) VALUES (5, "Las Vegas"), (5, "Reno"), (5, "Henderson"), (5, "Carson City");
+
+guillaume@ubuntu:~/0x0F$ cat 101-relationship_states_cities_list.sql | mysql -uroot -p
+guillaume@ubuntu:~/0x0F$ ./101-relationship_states_cities_list.py root root hbtn_0e_101_usa
+1: California
+    1: San Francisco
+    2: San Jose
+    3: Los Angeles
+    4: Fremont
+    5: Livermore
+2: Arizona
+    6: Page
+    7: Phoenix
+3: Texas
+    8: Dallas
+    9: Houston
+    10: Austin
+4: New York
+    11: New York
+5: Nevada
+    12: Las Vegas
+    13: Reno
+    14: Henderson
+    15: Carson City
+guillaume@ubuntu:~/0x0F$
+
+```
+
+**No test cases needed**
+
+**Repo:**
+
+-   GitHub repository: `alx-higher_level_programming`
+-   Directory: `0x0F-python-object_relational_mapping`
+-   File: `101-relationship_states_cities_list.py`
+
+ Done? Help Check your code Get a sandbox QA Review
+
+### 17\. From city
+
+#advanced
+
+Score: 0.00% (Checks completed: 0.00%)
+
+Write a script that lists all `City` objects from the database `hbtn_0e_101_usa`
+
+-   Your script should take 3 arguments: `mysql username`, `mysql password` and `database name`
+-   You must use the module `SQLAlchemy`
+-   Your script should connect to a MySQL server running on `localhost` at port `3306`
+-   You must use only one query to the database
+-   You must use the `state` relationship to access to the `State` object linked to the `City` object
+-   Results must be sorted in ascending order by `cities.id`
+-   Results must be displayed as they are in the example below
+-   Your code should not be executed when imported
+
+```
+<city id>: <city name> -> <state name>
+
+```
+
+```
+guillaume@ubuntu:~/0x0F$ ./102-relationship_cities_states_list.py root root hbtn_0e_101_usa
+1: San Francisco -> California
+2: San Jose -> California
+3: Los Angeles -> California
+4: Fremont -> California
+5: Livermore -> California
+6: Page -> Arizona
+7: Phoenix -> Arizona
+8: Dallas -> Texas
+9: Houston -> Texas
+10: Austin -> Texas
+11: New York -> New York
+12: Las Vegas -> Nevada
+13: Reno -> Nevada
+14: Henderson -> Nevada
+15: Carson City -> Nevada
+guillaume@ubuntu:~/0x0F$
+
+```
+
+**No test cases needed**
+
+**Repo:**
+
+-   GitHub repository: `alx-higher_level_programming`
+-   Directory: `0x0F-python-object_relational_mapping`
+-   File: `102-relationship_cities_states_list.py`
